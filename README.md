@@ -29,7 +29,7 @@ The default administration account/password is "admin/admin".
 
 Procedures to put this Simple Groupware system into OpenShift platform:
 
-1. Create a PHP 5.3 application.
+1. Create a PHP 5.4 application.
 
 2. git clone the initial repository file into local disk.
 
@@ -47,9 +47,11 @@ ln -sf $OPENSHIFT_DATA_DIR/ext $OPENSHIFT_REPO_DIR/php/ext
 
 6. add, commit and push you local repository to the remote repository by:
 
-git add .
+git add -A
 
-git commit -m "initial Simple Groupware version"
+git update-index –-chmod=+x .openshift/action_hooks/build
+
+git commit -m "initial Simple Groupware add"
 
 git push
 
